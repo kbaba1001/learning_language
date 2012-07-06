@@ -1,8 +1,24 @@
-var date = new Date(2009, 11, 5);
+var date = new Date(2009, 9, 2)
 
-// ブラウザのJavaScriptコンソールに結果を表示する
-console.log(date.strftime("%Y"));
-console.log(date.strftime("%m"));
-console.log(date.strftime("%d"));
-console.log(date.strftime("%y"));
-console.log(date.strftime("%F"));
+testCase("strftime test", {
+  "test format specifier %Y": function () {
+    assert("%Y should return full year",
+      date.strftime("%Y") === "2009");
+  }
+  ,"test format specifierr %m": function () {
+    assert("%m should return month",
+      date.strftime("%m") === "10");
+  }
+  ,"test format specifier %d": function () {
+    assert("%d should return date",
+      date.strftime("%d") === "02");
+  }
+  ,"test format specifier %y": function () {
+    assert("%yshould return year as two digits",
+    date.strftime("%y") === "09");
+  }
+  ,"test format shorthand %F": function() {
+    assert("%F should act as %Y-%m-%d",
+      date.strftime("%F") === "2009-10-02");
+  }
+});

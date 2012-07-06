@@ -46,18 +46,3 @@ Date.prototype.strftime = (function() {
 
   return strftime;
 }());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
