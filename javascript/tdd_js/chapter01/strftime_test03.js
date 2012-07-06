@@ -1,5 +1,3 @@
-// var date = new Date(2009, 9, 2)
-
 testCase("strftime test", {
   setUp: function () {
     this.date = new Date(2009, 9, 2, 22, 14, 45);

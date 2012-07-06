@@ -25,23 +25,33 @@ Date.prototype.strftime = (function() {
   Date.formats = {
     d: function(date) {
       return zeroPad(date.getDate());
-    },
+    }
 
-    m: function(date) {
+    ,m: function(date) {
+      // 本の通りに書いてるけど、なんで+1するんだろう？
+      // これだと入力した月の次の月が表示されて違和感があるんだが。
+      // ノルウェイ(作者の国)だとこういうものなのかな？
       return zeroPad(date.getMonth() + 1);
-    },
+    }
 
-    y: function(date) {
+    ,y: function(date) {
       return zeroPad(date.getYear() % 100);
-    },
+    }
 
-    Y: function(date) {
+    ,Y: function(date) {
       return date.getFullYear();
-    },
+    }
+
+    ,j: function(date) {
+      var janl = new Date(date.getFullYear(), 0, 1);
+      var diff = date.getTime() - janl.getTime();
+
+      return Math.ceil(diff / 86400000);
+    }
 
     //フォーマット略記法
-    F: "%Y-%m-%d",
-    D: "%m/%d/%y"
+    ,F: "%Y-%m-%d"
+    ,D: "%m/%d/%y"
   };
 
   return strftime;
