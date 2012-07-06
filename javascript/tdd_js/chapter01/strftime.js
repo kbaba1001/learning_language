@@ -23,7 +23,7 @@ Date.prototype.strftime = (function() {
   }
 
   Date.formats = {
-    d: function(data) {
+    d: function(date) {
       return zeroPad(date.getDate());
     },
 
