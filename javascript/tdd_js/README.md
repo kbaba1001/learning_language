@@ -17,3 +17,9 @@
     }());
 
 この違いって何？
+
+## Chapter03 現役で使われているツール
+Chapter03以降ではJsTestDriverによる自動テストを行う。
+
+JsTestDriverを直接コマンドラインで使うのは億劫なので[Jstduilt](http://cjohansen.no/en/javascript/jstdutil_a_ruby_wrapper_over_jstestdriver)をインストールした。これで簡単なコマンドでテストを実行できる。
+
